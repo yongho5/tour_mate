@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Explore Busan - TourMate</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Maps API -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCs9iaIlNoA00AzEyhokHBY_-Ne8vGahnM&callback=initMap"></script>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Discover Busan</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Attractions</a>
+            <ul class="dropdown">
+              <li><a href="#museums">Cultural Museums</a></li>
+              <li><a href="#galleries">Galleries</a></li>
+              <li><a href="#temples">Temples</a></li>
+            </ul>
+          </li>
+          <li><a href="daegu.html">Daegu</a></li>
+          <li><a href="daejeon.html">Daejeon</a></li>
+          <li><a href="jeju.html">Jeju</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="container">
+      <h2>Welcome to Busan</h2>
+      <p>Busan is a bustling city in South Korea, famous for its stunning beaches, rich cultural heritage, and vibrant nightlife. Here are some fun facts about Busan:</p>
+      <ul>
+        <li>Busan is South Korea's second-largest city and a major port.</li>
+        <li>It hosts the world's largest department store, Shinsegae Centum City.</li>
+        <li>Haeundae Beach is one of the most popular beaches in Korea.</li>
+        <li>The city is known for its delicious seafood, especially its sashimi.</li>
+      </ul>
+    </div>
+  </section>
+
+ <!-- Section for Cultural Museums -->
+<section id="museums" class="content-section">
+    <div class="container">
+        <h3>Cultural Museums</h3>
+        <div class="gallery">
+            <div class="item">
+                <img src="Museum 1.webp" alt="Museum 1">
+                <p>Busan Museum - Explore Busan’s cultural history.</p>
+            </div>
+            <div class="item">
+                <img src="Museum 2.jpg" alt="Museum 2">
+                <p>Busan Modern History Museum - Showcasing modern history and art.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section for Galleries -->
+<section id="galleries" class="content-section">
+    <div class="container">
+        <h3>Art Galleries</h3>
+        <div class="gallery">
+            <div class="item">
+                <img src="Gallery 1.webp" alt="Gallery 1">
+                <p>Busan Art Gallery - Featuring local and international art exhibits.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section for Temples -->
+<section id="temples" class="content-section">
+    <div class="container">
+        <h3>Famous Temples in Busan</h3>
+        <div class="gallery">
+            <div class="item">
+                <img src="Temple 1.webp" alt="Temple 1">
+                <p>Beomeosa Temple - A serene temple in the mountains.</p>
+            </div>
+            <div class="item">
+                <img src="Temple 2.jpg" alt="Temple 2">
+                <p>Haedong Yonggungsa - A stunning seaside temple.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Map Section -->
+<section id="map" class="map-section">
+    <div class="container">
+      <h3>Explore Busan on the Map</h3>
+      <div id="map"></div>
+    </div>
+</section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 TourMate. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link to external JS file -->
+  <script src="js/script.js"></script>
+
+</body>
+</html>
