@@ -5,10 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>TourMate - Explore South Korea</title>
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="css/style.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Internal CSS -->
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .top-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .top-nav ul li {
+            position: relative;
+            margin: 0 20px;
+        }
+
+        .top-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            padding: 10px 15px;
+        }
+
+        .top-nav a:hover {
+            background-color: #005bb5;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #0073e6;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            width: 150px;
+        }
+
+        .dropdown li {
+            text-align: left;
+            margin: 0;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dropdown a:hover {
+            background-color: #005bb5;
+        }
+
+        .top-nav li:hover .dropdown {
+            display: block;
+        }
+
+        /* Intro Section */
+        .intro {
+            background: url('intro-background.jpg') no-repeat center center/cover;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Fun Facts Section */
+        .fact-section {
+            background-color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .fact-section h3 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .fact-section ul {
+            list-style: none;
+        }
+
+        .fact-section li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+
+        .image-gallery h3 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #0073e6;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 1em;
+        }
+    </style>
 </head>
 <body>
 
