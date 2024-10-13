@@ -33,7 +33,7 @@
             const startIndex = 1; // 요청 시작 위치
             const endIndex = 1000; // 요청 종료 위치
 
-            const url = `http://openapi.seoul.go.kr:8088/${apiKey}/xml/culturalEventInfo/${startIndex}/${endIndex}`;
+            const url = `https://openapi.seoul.go.kr:8088/${apiKey}/xml/culturalEventInfo/${startIndex}/${endIndex}`; // HTTPS로 수정
 
             try {
                 const response = await fetch(url);
