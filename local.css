@@ -1,0 +1,151 @@
+/* 기본 레이아웃 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://res.cloudinary.com/dtljonz0f/image/upload/c_fill,w_640,h_400,g_auto/f_auto/q_auto/v1/gc-v1/seoul/shutterstock_2345265717_y7twyc?_a=BAVARSDW0'); /* 배경 이미지 추가 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 위치 조정 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* align-items 값을 flex-start로 변경하여 컨테이너가 상단에 정렬되도록 */
+    height: 100vh;
+}
+
+.container {
+    width: 100%; /* 전체 화면을 사용하도록 설정 */
+    max-width: 800px;
+    margin-top: 50px; /* 상단에 여백 추가 */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* 반투명 흰색 배경의 투명도 증가 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 효과 강화 */
+    border-radius: 10px; /* 둥근 모서리 */
+    animation: fadeIn 0.5s; /* 페이드 인 애니메이션 추가 */
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center; /* 제목 중앙 정렬 */
+    font-size: 2.5em; /* 제목 크기 조정 */
+    color: #333; /* 제목 색상 */
+    margin-bottom: 20px; /* 아래 여백 추가 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* 제목 그림자 */
+}
+
+/* 검색창 섹션 스타일링 */
+.search-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 70%; /* 입력창이 중앙에 오도록 설정 */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* 둥근 모서리 */
+    margin-right: 10px;
+    transition: border-color 0.3s; /* 테두리 색상 전환 효과 */
+}
+
+#searchInput:focus {
+    border-color: #4CAF50; /* 포커스 시 테두리 색상 변경 */
+    outline: none; /* 기본 테두리 제거 */
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer;
+    transition: background-color 0.3s; /* 배경색 전환 효과 */
+}
+
+#searchButton:hover {
+    background-color: #45a049; /* 마우스 오버 시 배경색 변경 */
+}
+
+/* 검색 결과 스타일링 */
+#results {
+    margin-top: 0; /* 상단 여백을 제거합니다 */
+    width: 100%; /* 결과가 오른쪽에 붙지 않도록 전체 너비를 차지 */
+    text-align: left; /* 검색 결과를 왼쪽 정렬 */
+}
+
+.result-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* 둥근 모서리 */
+    background-color: #f9f9f9; /* 결과 항목의 배경 색상 조정 */
+    transition: box-shadow 0.3s; /* 그림자 전환 효과 */
+}
+
+.result-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 마우스 오버 시 그림자 효과 */
+}
+
+.result-item h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+.result-item p {
+    margin: 5px 0;
+}
+
+.result-item a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.result-item a:hover {
+    text-decoration: underline;
+}
+
+/* 구분선 스타일 */
+hr {
+    border: 0.5px solid #ccc;
+}
+
+/* 웹사이트 방문 버튼 스타일 */
+.website-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px; /* 둥근 모서리 */
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s; /* 배경색 전환 효과 */
+}
+
+.website-button:hover {
+    background-color: #45a049; /* 마우스 오버 시 배경색 변경 */
+}
+
+/* 검색 결과가 없을 때 메시지 스타일 */
+.no-results {
+    text-align: center;
+    font-size: 1.5em;
+    color: #FF0000; /* 빨간색으로 강조 */
+    margin-top: 20px;
+}

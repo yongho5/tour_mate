@@ -1,0 +1,47 @@
+/* 전체 페이지 스타일 */
+body {
+    font-family: 'Arial', sans-serif; /* 글꼴 설정 */
+    margin: 0; /* 기본 여백 제거 */
+    background-image: url('https://st2.depositphotos.com/6513236/9320/i/450/depositphotos_93207836-stock-photo-gwanghwamun-gate-of-gyeongbokgung-palace.jpg'); /* 배경 이미지 설정 */
+    background-size: cover; /* 배경 이미지 크기 조절 */
+    background-position: center; /* 배경 이미지 위치 조정 */
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    align-items: center; /* 수평 중앙 정렬 */
+    height: 100vh; /* 화면 높이 100% */
+    color: white; /* 텍스트 색상 */
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 2.5em; /* 제목 크기 조정 */
+    margin-bottom: 40px; /* 제목과 버튼 간의 여백 */
+}
+
+/* 버튼 컨테이너 스타일 */
+.button-container {
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 버튼 세로 방향 정렬 */
+    align-items: center; /* 버튼 중앙 정렬 */
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 12px 20px; /* 버튼 내부 여백 */
+    font-size: 1.2em; /* 버튼 글씨 크기 */
+    color: white; /* 버튼 글씨 색상 */
+    background-color: rgba(0, 123, 255, 0.8); /* 버튼 배경 색상 (투명도 추가) */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    cursor: pointer; /* 커서 모양 변경 */
+    transition: background-color 0.3s, transform 0.3s; /* 배경색 변화 및 크기 변화 애니메이션 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* 버튼 그림자 */
+    margin: 10px; /* 버튼 간의 여백 */
+}
+
+/* 버튼 호버 스타일 */
+button:hover {
+    background-color: rgba(0, 105, 255, 0.8); /* 호버 시 색상 변경 */
+    transform: translateY(-2px); /* 버튼 위로 이동 */
+}

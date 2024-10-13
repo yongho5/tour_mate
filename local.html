@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="local.css">
+    <title>Search for attractions</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Search for attractions</h1>
+        <div id="results"></div> <!-- 검색 결과 div를 상단으로 이동 -->
+        <div class="search-section">
+            <input type="text" id="searchInput" placeholder="Enter a search" />
+            <button id="searchButton">Search</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('searchButton').addEventListener('click', fetchAttractions);
+
+        async function fetchAttractions() {
+    const query = document.getElementById('searchInput').value.trim(); // 앞뒤 공백 제거
+
+    try {
+        const response = await fetch(`http://openapi.seoul.go.kr:8088/42494a5171696f6b37374b474c5a61/xml/TbVwAttractions/1/1000/`);
+
+        if (!response.ok) {
+            throw new Error("Error fetching attractions: " + response.statusText);
+        }
+
+        const text = await response.text(); // XML 데이터를 텍스트로 읽기
+        const parser = new DOMParser(); // XML 파서를 사용하여 XML 문서로 변환
+        const xmlDoc = parser.parseFromString(text, "text/xml");
+
+        const items = Array.from(xmlDoc.getElementsByTagName('row')); // 모든 'row' 엘리먼트를 가져오기
+
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = ''; // 기존 결과 초기화
+
+        const filteredItems = items.filter(item => {
+            const langCodeId = item.getElementsByTagName('LANG_CODE_ID')[0].textContent;
+            return langCodeId === 'ko' || langCodeId === 'en'; // 한국어 또는 영어만 필터링
+        });
+
+        // 검색어에 따라 필터링
+        const searchFilteredItems = filteredItems.filter(item => {
+            const tags = item.getElementsByTagName('TAG')[0]?.textContent || ''; // TAG가 존재할 경우 사용
+            return tags.includes(query); // TAG에 검색어가 포함되는지 확인
+        });
+
+        if (searchFilteredItems.length > 0) {
+            searchFilteredItems.forEach(item => {
+                const div = document.createElement('div');
+                div.classList.add('result-item'); // 결과 항목 스타일 추가
+                div.innerHTML = `
+                    <h3>${item.getElementsByTagName('POST_SJ')[0].textContent}</h3>
+                    <p>Address: ${item.getElementsByTagName('NEW_ADDRESS')[0].textContent}</p>
+                    <p>Phone number: ${item.getElementsByTagName('CMMN_TELNO')[0].textContent}</p>
+                    <p>Operating hours: ${item.getElementsByTagName('CMMN_USE_TIME')[0].textContent}</p>
+                    <p>Day off: ${item.getElementsByTagName('CMMN_RSTDE')[0].textContent}</p>
+                    ${item.getElementsByTagName('CMMN_HMPG_URL')[0]?.textContent ? `<button class="website-button" onclick="window.open('${item.getElementsByTagName('CMMN_HMPG_URL')[0].textContent}', '_blank')">Visit the website</button>` : '<p>웹사이트 정보 없음</p>'}
+                    <button class="location-button" onclick="openMap('${item.getElementsByTagName('NEW_ADDRESS')[0].textContent}')">See the location</button>
+                    <hr />
+                `;
+                resultsDiv.appendChild(div);
+            });
+        } else {
+            resultsDiv.innerHTML = '<p>결과가 없습니다.</p>';
+        }
+    } catch (error) {
+        console.error(error);
+        document.getElementById('results').innerHTML = '<p>검색 중 오류가 발생했습니다.</p>';
+    }
+}
+
+
+        // 위치를 구글 맵으로 보여주는 함수
+        function openMap(address) {
+            const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+            window.open(mapUrl, '_blank'); // 새 탭에서 열기
+        }
+    </script>
+</body>
+</html>
